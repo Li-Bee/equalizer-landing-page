@@ -1,0 +1,468 @@
+/* ************** */
+/* CSS RESET */
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+/* ************** */
+
+/* REMOVE DEFAULT MARGIN AND PADDING */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* BOX-SIZING RULES */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ALLOW PERCENTAGE-BASED HEIGHTS IN APPLICATION */
+html,
+body {
+  height: 100%;
+}
+
+/*
+  TYPOGRAPHIC TWEAKS!
+  ADD ACCESSIBLE LINE-HEIGHT
+  IMPROVE TEXT RENDERING
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  /* FOR FIREFOX */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* IMPROVE MEDIA DEFAULTS TO COVER WIDTH OF CONTAINER ONLY */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* REMOVE BUILT-IN TYPOGRAPHY STYLES */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* AVOID TEXT OVERFLOWS*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* CREATE A ROOT STACKING CONTEXT */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* ************** */
+
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  margin: 0 auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* 640PX and above */
+@media screen and (min-width: 40rem) {
+  body {
+    background-image: url(../img/bg-main-tablet.png);
+    background-repeat: no-repeat;
+    background-position: top -15rem left -25rem;
+  }
+}
+
+/* 1000PX and above */
+@media screen and (min-width: 62.5rem) {
+  body {
+    background-image: url(../img/bg-main-desktop.png);
+    background-repeat: no-repeat;
+    background-position: top -20rem left -18rem;
+  }
+}
+
+/* ************** */
+/* HEADER */
+/* ************** */
+
+.wrapper {
+  padding: 0 1.5rem;
+}
+
+.header-bg-image {
+  display: none;
+}
+
+.header {
+  padding-top: 2.5rem;
+  background-image: url(../img/bg-main-mobile.png);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+}
+
+.header-title {
+  padding-top: 4rem;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.45px;
+  font-weight: 700;
+}
+
+.header-description {
+  /* PADDING BOTTOM TO THE PHONE IMAGE */
+  padding: 1.25rem 0 4.25rem 0;
+  line-height: 1.62;
+}
+
+/* 640PX and above */
+@media screen and (min-width: 40rem) {
+  .wrapper {
+    padding: 0 2.4375rem;
+  }
+
+  .header-bg-image {
+    display: block;
+    position: absolute;
+    width: 16.625rem;
+    top: -2rem;
+    right: -2.25rem;
+  }
+
+  .header {
+    padding-top: 3.875rem;
+    background: none;
+  }
+
+  .header-title {
+    padding-top: 5.9375rem;
+    padding-right: 10.625rem;
+    font-size: 4rem;
+    line-height: 1;
+    letter-spacing: -0.72px;
+  }
+
+  .header-description {
+    padding: 1.75rem 11rem 6.9375rem 0;
+    font-size: 1.125rem;
+    line-height: 1.56;
+  }
+}
+
+/* 1000PX and above */
+@media screen and (min-width: 62.5rem) {
+  .wrapper {
+    padding: 0 10.3125rem;
+  }
+
+  .header-bg-image {
+    top: -2.5rem;
+    right: 0;
+  }
+
+  .header {
+    padding-top: 3.875rem;
+  }
+
+  .header-title {
+    padding-top: 7.9375rem;
+    font-size: 5.5rem;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .header-description {
+    padding: 2.5rem 17.5rem 6.75rem 0;
+    font-size: 1.25rem;
+    line-height: 1.7;
+  }
+}
+
+/* ************** */
+/* MAIN */
+/* ************** */
+
+.main-container {
+  margin-top: 6.125rem;
+  background-color: #191826;
+  border-radius: 0.75rem;
+
+  position: relative;
+}
+
+.main-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(../img/bg-pattern-2.svg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  /* 280/375 */
+  background-size: 75%;
+}
+
+.main-phone-image {
+  /* 167/375 / 2 */
+  padding: 0 22.2%;
+  transform: translateY(-6.125rem);
+  /* counteract movement in y axis */
+  margin-bottom: -6.125rem;
+}
+
+/* 640PX and above */
+@media screen and (min-width: 40rem) {
+  .main-container {
+    margin: 0 2.4375rem;
+    margin-top: 8.625rem;
+    height: 37.5rem;
+  }
+
+  .main-container::before {
+    /* 280/690 */
+    background-size: 40%;
+    background-position: top -19% center;
+  }
+
+  .main-phone-image {
+    transform: translateY(-8.625rem);
+    margin-bottom: -8.625rem;
+    /* 64/690 */
+    padding: 0 0 0 9%;
+    width: 48%;
+  }
+}
+
+/* 1000PX and above */
+@media screen and (min-width: 62.5rem) {
+  .main-container {
+    margin: 0 10.3125rem;
+    margin-top: 13.3125rem;
+  }
+
+  .main-container::before {
+    /* 312/1110 */
+    background-size: 28%;
+    background-position: top -28% left 41.8%;
+  }
+
+  .main-phone-image {
+    transform: translateY(-13.3125rem);
+    margin-bottom: -13.3125rem;
+    width: 37.1%;
+    padding: 0 0 0 9.1%;
+  }
+}
+
+/* ************** */
+/* ARTICLE */
+/* ************** */
+
+.main-article {
+  background-color: #fa7453;
+  color: #fcfaf9;
+  padding: 3rem 2.25rem;
+  border-radius: 0.75rem;
+  display: grid;
+  margin-top: 3rem;
+  position: relative;
+}
+
+.article-title {
+  margin-bottom: 0.75rem;
+  font-size: 2rem;
+  line-height: 1.25;
+}
+
+.article-description {
+  margin-bottom: 2.25rem;
+  font-size: 1.125rem;
+  line-height: 1.56;
+}
+
+.article-price {
+  margin-bottom: 2rem;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  letter-spacing: -0.0125rem;
+}
+
+.article-price-amount {
+  font-weight: 700;
+  font-size: 4.0625rem;
+  line-height: 0.8;
+}
+
+@media screen and (min-width: 40rem) {
+  .main-article {
+    width: 24.9375rem;
+    padding: 3rem;
+    position: absolute;
+    /* height 600 */
+    top: 25%;
+    /* width 690 */
+    left: 35%;
+    margin: 0;
+  }
+}
+
+/* 1000PX and above */
+@media screen and (min-width: 62.5rem) {
+  .main-article {
+    width: 27.875rem;
+    /* height 600 */
+    top: 15%;
+    /* width 1110 */
+    left: 51%;
+    padding: 3.625rem;
+  }
+
+  .article-title {
+    font-size: 2.5rem;
+    line-height: 1.3;
+    margin-bottom: 1.375rem;
+  }
+
+  .article-description {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    margin-bottom: 2.4375rem;
+  }
+
+  .article-price {
+    margin-bottom: 2.875rem;
+  }
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.75rem;
+  padding: 0.9rem 0;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.78;
+  transition: all ease 0.2s;
+  cursor: pointer;
+}
+
+.btn-image {
+  margin-right: 0.5rem;
+}
+
+.btn-apple {
+  background-color: #191826;
+  margin-bottom: 1rem;
+  color: #fcfaf9;
+}
+
+.btn-apple:hover,
+.btn-apple:focus,
+.btn-apple:active {
+  background-color: #66e2dc;
+}
+
+.btn-android {
+  background-color: #fcfaf9;
+  color: #191826;
+}
+
+.btn-android:hover,
+.btn-android:focus,
+.btn-android:active {
+  background-color: #ffb964;
+}
+
+/* ************** */
+/* FOOTER */
+/* ************** */
+
+.footer {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.footer-description {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.footer-icons-container {
+  display: flex;
+  transition: all ease 0.2s;
+  cursor: pointer;
+}
+
+.footer-email {
+  font-weight: 700;
+  color: #191826;
+  text-decoration: none;
+}
+
+.footer-icons-container a:not(:last-child) {
+  margin-right: 1.25rem;
+}
+
+.footer-icons-container a:hover svg path,
+.footer-icons-container a:focus svg path,
+.footer-icons-container a:active svg path {
+  fill: #fa7453;
+}
+
+@media screen and (min-width: 40rem) {
+  .footer {
+    padding-top: 11.4375rem;
+    padding-bottom: 5.3125rem;
+  }
+
+  .footer-container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-description {
+    margin: 0;
+    width: 23rem;
+  }
+}
+
+/* 1000PX and above */
+@media screen and (min-width: 62.5rem) {
+  .footer {
+    padding-top: 12.625rem;
+    padding-bottom: 5.6875rem;
+
+    display: flex;
+  }
+
+  .footer-container {
+    margin: 0;
+  }
+
+  .footer-description {
+    margin-left: 8.5625rem;
+    margin-right: 22.4375rem;
+  }
+}
